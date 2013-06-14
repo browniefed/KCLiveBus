@@ -1,42 +1,5 @@
 extends layout
 
 block content
-	div(id="map_canvas")
-	a(href="#menu-modal",class="call-modal",class="aicon menuicon")
-	div(class="statusbar followbus", id="followbus")
-		p TEST STATUS UPDATE
-		a(class="close", id="stopfollowing") X
-
-	div(class="menu-modal semantic-content", id="menu-modal", tabindex="-1", role="dialog",aria-labelledby="modal-label", aria-hidden="true")
-		div(class="modal-inner")
-			header(id="modal-label")
-				h2 PDXLiveBus Menu
-
-			div(class="modal-content")
-				ul(class="menu")
-					li(class="bus-menu menu-option selected", id="show-buses")
-						a(href="#buses") Show Buses
-					li(class="max-menu menu-option selected", id="show-max")
-						a(href="#maxes") Show Maxes
-					li(class="sc-menu menu-option selected", id="show-sc")
-						a(href="#sc") Show Streetcar
-					li(class="about-menu menu-option", id="about")
-						a(href="#about-modal", class="call-modal") About
-					li(class="route-selection menu-option menu-option-full")
-						select(id="route-selection")
-							option(value="-1") All Routes
-		a(href="#!", class="modal-close", title="Close menu", data-dismiss="modal") X
-
-	div(class="about-modal semantic-content", id="about-modal", tabindex="-1", role="dialog",aria-labelledby="modal-label", aria-hidden="true")
-		div(class="modal-inner")
-			header(id="modal-label")
-				h2 About PDXLiveBus
-				a(href="https://twitter.com/browniefed", class="twitter-follow-button", data-show-count="true") Follow @browniefed
-				iframe(width="85px", height="20px", frameborder="0", scrolling="0", allowtransparency="true", src="http://ghbtns.com/github-btn.html?user=browniefed&repo=livemet&am&type=watch&count=true")
-			div(class="modal-content")
-				p PDXLiveBus was born out of frustration and boredom. It's an open source live map of trimet. It is pseudo-realtime, and vehicles are accurte to within 10 seconds - 1 minute.
-				p A blog post about it all is coming soon, as well as more features. This is in super-beta, and going through a complete rebuild.
-		a(href="#!", class="modal-close", title="Close menu", data-dismiss="modal") X
-
-	script(src="javascripts/AnimatedMarker.min.js")
-	script(src="javascripts/firebus.js")
+	leaflet(center="center", markers="markers", defaults="defaults")
+	

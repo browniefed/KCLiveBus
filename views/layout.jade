@@ -1,23 +1,28 @@
 doctype 5
-html
+html(ng-app="KCLiveBus")
   head
-    title PDX Live Bus
+
+    title KC Live Bus
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet", href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css")
     link(rel="stylesheet", href="/stylesheets/modal.css")
     <!--[if lte IE 8]>
     link(rel="stylesheet", href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css")
     <![endif]-->
+
     meta(name="viewport", content="width=device-width")
-    meta(property="title", content="PDX Live Bus - Portland TriMet live map")
+    meta(property="title", content="KC Live Bus - Kansas City public transportation live map")
     meta(property="description", content="Watch all maxes, buses, and street cars in realtime.")
-    meta(property="og:title", content="PDX Live Bus - Portland TriMet live map")
+    meta(property="og:title", content="KC Live Bus - Kansas City public transportation live map")
     meta(property="og:image", content="http://i.imgur.com/7XVHsgW.png")
-    meta(property="og:description", content="Watch all maxes, buses, and street cars in realtime.")
-    script(src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.5.1/leaflet.js")
+    meta(property="og:description", content="Watch all buses in realtime.")
+
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js")
     script(src="https://cdn.firebase.com/v0/firebase.js")
-    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js")
+    script(src="javascripts/angularFire.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.5.1/leaflet.js")
+    script(src="javascripts/directives/angular-leaflet-directive.js")
     script(src="/javascripts/ga.js")
-    script(src="/javascripts/modal.js")
-  body
+    script(src="/javascripts/app.js")
+  body(ng-controller="MapCtrl")
     block content
